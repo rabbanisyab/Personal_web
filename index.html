@@ -5,7 +5,8 @@
   <meta name="viewport" content="width=device-width,initial-scale=1" />
   <title>Haya Rabbani Syabana — Personal Website</title>
   <meta name="description" content="Personal website Haya Rabbani Syabana — portfolio, about, contact." />
-
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
+  <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
   <link rel="stylesheet" href="style.css" />
 </head>
 <body>
@@ -92,23 +93,56 @@
         <h3>Projek</h3>
         <div class="projects" style="margin-top:12px">
           <div class="project">
+            <img src="img/project1.png" alt="" class="project-img">
             <h4>Portfolio Sederhana</h4>
-            <p class="muted">Website ini adalah contoh portfolio sederhana — dibuat dengan HTML, CSS, dan sedikit JS.</p>
+            <p class="muted">Website ini adalah portfolio sederhana saya — dibuat dengan HTML, CSS, dan sedikit JavaScript.</p>
           </div>
           <div class="project">
-            <h4>Aplikasi ToDo</h4>
-            <p class="muted">ToDo list interaktif yang menyimpan data di localStorage.</p>
+            <img src="img/Project2.png" alt="" class="project-img">
+            <h4>Aplikasi Hosting Web & Cek Domain</h4>
+            <p class="muted">Aplikasi ini adalah sistem hosting web sederhana yang dilengkapi fitur pengecekan domain. Dibangun menggunakan Laravel dan Bootstrap.</p>
           </div>
           <div class="project">
+            <img src="img/project3.png" alt="" class="project-img">
             <h4>Aplikasi ToDo</h4>
-            <p class="muted">ToDo list interaktif yang menyimpan data di localStorage.</p>
+            <p class="muted">Aplikasi Web untuk mencatat, mengelola, dan menandai tugas harian. Dibuat menggunakan HTML, CSS, dan Python.</p>
           </div>
           <div class="project">
+            <img src="img/project4.png" alt="" class="project-img">
             <h4>Aplikasi ToDo</h4>
-            <p class="muted">ToDo list interaktif yang menyimpan data di localStorage.</p>
+            <p class="muted">Aplikasi Web sederhana untuk mencatat dan memantau tabungan harian. Dibangun dengan HTML, CSS, dan Python.</p>
+          </div>
+          <div class="project">
+            <img src="img/project5.png" alt="" class="project-img">
+            <h4>Desain Aplikasi E-Ticket SejukPool</h4>
+            <p class="muted">Sistem pemesanan tiket digital untuk Wisata Kolam Berenang. Dikembangkan menggunakan Laravel, blade php, dan Bootstrap.</p>
           </div>
         </div>
       </section>
+      <section id="gallery">
+        <h3>All Gallery Project</h3>
+
+        <div class="gallery-scroll">
+          <img src="img/project1.png" class="gimg">
+          <img src="img/Project2.png" class="gimg">
+          <img src="img/project21.png" class="gimg">
+          <img src="img/project3.png" class="gimg">
+          <img src="img/project4.png" class="gimg">
+          <img src="img/project5.png" class="gimg">
+          <img src="img/project51.png" class="gimg">
+        </div>
+      </section>
+
+      <!-- Modal -->
+      <div id="imgModal" class="modal hidden">
+        <span id="closeModal">&times;</span>
+        <img id="modalImg" src="">
+      </div>
+
+      <div id="modal" class="modal hidden">
+          <span id="closeModal">&times;</span>
+          <img id="modalImg">
+        </div>
 
       <section id="contact" class="fade-in">
         <h3>Kontak</h3>

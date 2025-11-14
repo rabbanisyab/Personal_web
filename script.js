@@ -49,3 +49,25 @@ sendBtn && sendBtn.addEventListener('click', ()=>{
 document.body.addEventListener('keydown', (e)=>{
   if(e.key === 'Tab') document.documentElement.style.setProperty('--focusOutline','2px solid rgba(6,182,212,0.4)');
 });
+
+const images = document.querySelectorAll(".gimg");
+  const modal = document.getElementById("imgModal");
+  const modalImg = document.getElementById("modalImg");
+  const closeModal = document.getElementById("closeModal");
+
+  images.forEach(img => {
+    img.addEventListener("click", () => {
+      modalImg.src = img.src;
+      modal.classList.remove("hidden");
+    });
+  });
+
+  closeModal.addEventListener("click", () => {
+    modal.classList.add("hidden");
+  });
+
+  modal.addEventListener("click", (e) => {
+    if (e.target === modal) modal.classList.add("hidden");
+  });
+
+  
