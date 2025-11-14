@@ -147,15 +147,15 @@
       <section id="contact" class="fade-in">
         <h3>Kontak</h3>
         <div class="hero-card" style="margin-top:12px">
-          <form id="contactForm" onsubmit="return false">
+          <form id="contactForm" action="https://formspree.io/f/xyzlkbbg" method="POST">
             <label for="name">Nama</label>
-            <input id="name" placeholder="Nama kamu" required />
+            <input name="name" id="name" placeholder="Nama kamu" required />
 
             <label for="email">Email</label>
-            <input id="email" type="email" placeholder="example@mail.com" required />
+            <input name="email" id="email" type="email" placeholder="example@mail.com" required />
 
             <label for="message">Pesan</label>
-            <textarea id="message" rows="4" placeholder="Tulis pesan..." required></textarea>
+            <textarea name="message" id="message" rows="4" placeholder="Tulis pesan..." required></textarea>
 
             <div style="display:flex;gap:8px;align-items:center;margin-top:6px">
               <button class="send" id="sendBtn">Kirim Pesan</button>

@@ -19,33 +19,35 @@ document.querySelectorAll('a[href^="#"]').forEach(a=>{
   });
 });
 
-// Simple contact form validation + fake submit
-const contactForm = document.getElementById('contactForm');
-const sendBtn = document.getElementById('sendBtn');
-const formMsg = document.getElementById('formMsg');
+const contactForm = document.getElementById("contactForm");
+const sendBtn = document.getElementById("sendBtn");
+const formMsg = document.getElementById("formMsg");
 
-sendBtn && sendBtn.addEventListener('click', ()=>{
-  const name = document.getElementById('name').value.trim();
-  const email = document.getElementById('email').value.trim();
-  const message = document.getElementById('message').value.trim();
-  formMsg.textContent = '';
+contactForm.addEventListener("submit", async (e) => {
+  e.preventDefault();
 
-  if(!name || !email || !message){
-    formMsg.textContent = 'Mohon isi semua kolom.';
-    return;
-  }
-
-  sendBtn.textContent = 'Mengirim...';
+  sendBtn.textContent = "Mengirim...";
   sendBtn.disabled = true;
-  setTimeout(()=>{
-    sendBtn.textContent = 'Kirim Pesan';
-    sendBtn.disabled = false;
-    formMsg.textContent = 'Pesan terkirim! Aku akan menghubungi secepatnya.';
+
+  const data = new FormData(contactForm);
+
+  const res = await fetch(contactForm.action, {
+    method: "POST",
+    body: data,
+    headers: { Accept: "application/json" }
+  });
+
+  sendBtn.textContent = "Kirim Pesan";
+  sendBtn.disabled = false;
+
+  if (res.ok) {
+    formMsg.textContent = "Pesan terkirim! Aku akan menghubungi secepatnya.";
     contactForm.reset();
-  }, 900);
+  } else {
+    formMsg.textContent = "Gagal mengirim pesan. Coba lagi.";
+  }
 });
 
-// Accessibility: focus outlines for keyboard users
 document.body.addEventListener('keydown', (e)=>{
   if(e.key === 'Tab') document.documentElement.style.setProperty('--focusOutline','2px solid rgba(6,182,212,0.4)');
 });
